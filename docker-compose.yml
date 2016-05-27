@@ -1,12 +1,12 @@
 influxsrv:
-  image: tutum/influxdb:0.9
+  image: tutum/influxdb:0.12
   ports:
     - "8083:8083"
     - "8086:8086"
   environment:
     - PRE_CREATE_DB=cadvisor
 grafana:
-  image: grafana/grafana:2.6.0
+  image: grafana/grafana:3.0.4
   ports:
     - "3000:3000"
   links:
@@ -18,7 +18,7 @@ grafana:
     - INFLUXDB_USER=root
     - INFLUXDB_PASS=root
 cadvisor:
-  image: google/cadvisor
+  image: google/cadvisor:v0.23.1
   command: -storage_driver=influxdb -storage_driver_db=cadvisor -storage_driver_host=influxsrv:8086
   ports:
     - "8080:8080"

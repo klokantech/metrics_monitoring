@@ -11,14 +11,14 @@ RUN apt-get update && apt-get install -qq -y \
     pip install -q supervisor
 
 # Install Grafana
-ENV GRAFANA_VERSION 2.6.0
+ENV GRAFANA_VERSION 3.0.4-1464167696
 RUN curl -s -o /tmp/grafana_amd64.deb https://grafanarel.s3.amazonaws.com/builds/grafana_${GRAFANA_VERSION}_amd64.deb && \
   dpkg -i /tmp/grafana_amd64.deb && \
   rm /tmp/grafana_amd64.deb && \
   rm -rf /var/lib/apt/lists/*
 
 # Install InfluxDB
-ENV INFLUXDB_VERSION 0.9.6.1
+ENV INFLUXDB_VERSION 0.12.1-1
 RUN curl -s -o /tmp/influxdb_latest_amd64.deb https://s3.amazonaws.com/influxdb/influxdb_${INFLUXDB_VERSION}_amd64.deb && \
   dpkg -i /tmp/influxdb_latest_amd64.deb && \
   rm /tmp/influxdb_latest_amd64.deb && \

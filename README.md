@@ -29,6 +29,6 @@ Where:
 `value` name of value (names of non indexed columns in SQL)
 `0.78` is value (values in non indexed columns in SQL)
 
-https://docs.influxdata.com/influxdb/v0.9/write_protocols/write_syntax/
+https://docs.influxdata.com/influxdb/v0.12/write_protocols/write_syntax/
 
 docker-compose.yml - for local testing with cadvisor
